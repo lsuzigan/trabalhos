@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercício 2</title>
+</head>
+
+<body>
+  <main>
+    <form action="cadastraCliente.php" method="post">
+      <fieldset>
+        <legend>Dados pessoais</legend>
+        <div>
+          <label for="personType">Tipo de pessoa:</label>
+          <input type="text" name="personType" id="personType" value="Física" readonly>
+        </div>
+
+        <div>
+          <label for="name">Nome:</label>
+          <input type="text" name="name" id="name" autofocus required minlength="2" maxlength="50">
+        </div>
+
+        <div>
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="email" required>
+        </div>
+
+        <div>
+          <label for="cpf">CPF:</label>
+          <input type="text" name="cpf" id="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" required maxlength="14">
+        </div>
+
+        <div>
+          <label for="age">Idade:</label>
+          <input type="number" name="age" id="age" required>
+        </div>
+
+        <div>
+          <label for="phone">Telefone:</label>
+          <input type="tel" name="phone" id="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+        </div>
+
+        <div>
+          <label for="birthdate">Data de nascimento:</label>
+          <input type="date" name="birthdate" id="birthdate">
+        </div>
+
+        <div>
+          <label>Sexo:</label>
+          <input type="radio" name="sex" id="sex_f">
+          <label for="sex_f">Feminino</label>
+          <input type="radio" name="sex" id="sex_m">
+          <label for="sex_m">Masculino</label>
+        </div>
+
+        <div>
+          <label for="maritalStatus">Estado civil:</label>
+          <input type="text" name="maritalStatus" id="maritalStatus">
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Endereço de Entrega</legend>
+        <div>
+          <label for="zipcode">CEP:</label>
+          <input type="text" name="zipcode" id="zipcode" required>
+        </div>
+
+        <div>
+          <label for="streetType">Tipo de logradouro:</label>
+          <select name="streetType" id="streetType" required>
+            <option value="">Selecione</option>
+            <option value="rua">Rua</option>
+            <option value="av">Avenida</option>
+            <option value="praca">Praça</option>
+            <option value="alm">Alameda</option>
+            <option value="trv">Travessa</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="street">Logradouro:</label>
+          <input type="text" name="street" id="street" required>
+        </div>
+
+        <div>
+          <label for="neighbourhood">Bairro:</label>
+          <input type="text" name="neighbourhood" id="neighbourhood" required>
+        </div>
+
+        <div>
+          <label for="city">Cidade:</label>
+          <input type="text" name="city" id="city" required>
+        </div>
+
+        <div>
+          <label for="state">Estado:</label>
+          <input type="text" name="state" id="state" required>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Informações Adicionais</legend>
+        <p>Selecione os interesses abaixo:</p>
+        <div>
+          <input type="checkbox" name="movies" id="movies">
+          <label for="movies">Filmes</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="it" id="it">
+          <label for="it">Informática</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="games" id="games">
+          <label for="games">Games</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="books" id="books">
+          <label for="books">Livros</label>
+        </div>
+
+        <div>
+          <input type="checkbox" name="clothing" id="clothing">
+          <label for="clothing">Roupas</label>
+        </div>
+
+        <div>
+          <label for="additional">Informações complementares</label>
+          <textarea name="additional" id="additional" cols="30" rows="10"></textarea>
+        </div>
+      </fieldset>
+
+      <input type="hidden" name="h_field" value="extra">
+    </form>
+  </main>
+</body>
+
+</html>
