@@ -1,0 +1,55 @@
+body {
+    background-color: #ddd;
+    font-family: 'Helvetica Neue';
+    line-height: 1.5;
+    width: 60%;
+    position: absolute;
+    transform: translateX(50%);
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border: solid;
+    border-radius: 10px;
+    border-color: gainsboro;
+    margin-top: 5px;
+}
+
+header, footer, nav {
+    background-color: #555;
+    color: #eee;
+    border: solid;
+    border-radius: 10px;
+    text-align: center;
+    margin: 5px 0 0 0;
+    border-color: gray;
+    padding: auto;
+}
+
+nav {
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    align-items: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+h2 {
+    color: #555;
+}
