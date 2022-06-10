@@ -1,0 +1,18 @@
+#modal {
+    display: none;
+
+    float: left;
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    transform: translateX(50%);
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 1em black;
+    background-color: grey;
+}
+
+p {
+    text-align: center;
+}

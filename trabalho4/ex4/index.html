@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<body>
+    <main>
+        <label for="interest">Interesse</label>
+        <input type="text" name="interest" id="interest">
+        <button type="button" id="add">Adicionar</button>
+
+        <ol id="list">
+            <li>Shows
+                <button class="remove">X</button>
+            </li>
+            <li>Filmes
+                <button class="remove">X</button>
+            </li>
+        </ol>
+    </main>
+
+    <script>
+        // Cria a lista de botoes que removem os li's
+        var removeButtons = Array.from(document.querySelectorAll('.remove'))
+        // para cada botao
+        removeButtons.forEach(x => {
+            // adiciona um evento de click ao botao de remover
+            x.addEventListener('click', () => {
+                // remove o elemento pai que eh o li
+                x.parentElement.remove()
+            })
+        })
+
+        // ao carregar a tela
+        window.onload = () => {
+            // obtem o botao que faz a adicao de um novo li
+            const button = document.getElementById('add')
+            // adiciona um evento de click ao botao adicionar
+            button.addEventListener('click', () => {
+                // obtem o valor do campo de interesse
+                const interest = document.querySelector('#interest').value
+                // valida se o interesse foi informado
+                if (interest != '')
+                {
+                    // cria um novo elemento li
+                    let li = document.createElement('li')
+                    // popula o conteudo de li
+                    li.textContent = interest + ' '
+                    // obtem o elemento ol
+                    const ol = document.querySelector('#list')
+                    // adiciona o novo li na lista ol
+                    ol.appendChild(li)
+                    // cria um novo botao de remocao do li
+                    const removeButton = document.createElement('button')
+                    // seta a classe do novo botao
+                    removeButton.className = 'remove'
+                    // popula o conteudo do botao
+                    removeButton.textContent = 'X'
+                    //  adiciona o novo botao no novo li
+                    li.appendChild(removeButton)
+                    // adiciona um evento de click ao novo botao
+                    removeButton.addEventListener('click', () => {
+                        // remove o elemento pai do botao
+                        removeButton.parentElement.remove()
+                    })
+
+                    // adiciona o novo botao na lista de botoes que removem os li's
+                    removeButtons.push(removeButton)
+                }
+                // Caso nao tenha informado o interesse informa via alert
+                else
+                    alert('Informe o interesse')
+            })
+        }
+
+    </script>
+</body>
+
+</html>
